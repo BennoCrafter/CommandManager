@@ -10,10 +10,12 @@ if __name__ == "__main__":
     manager.register_command(GreetCommand(name="greet"))
     manager.register_command(AddCommand(name="add"))
     manager.register_command(HelpCommand(name="help"))
-
-    while True:
-        user_input: str = input("Enter command: ")
-        if user_input.lower() in ["exit", "quit", "bye", "q", "x", "stop", "end"]:
-            break
-        result = manager.execute_command(user_input)
-        print(result)
+    try:
+        while True:
+            user_input: str = input("Enter command: ")
+            if user_input.lower() in ["exit", "quit", "bye", "q", "x", "stop", "end"]:
+                break
+            result = manager.execute_command(user_input)
+            print(result)
+    except KeyboardInterrupt:
+        exit(0)

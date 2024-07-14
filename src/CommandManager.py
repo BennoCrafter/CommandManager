@@ -1,8 +1,10 @@
 from commands.Command import Command
 
 class CommandManager:
-    def __init__(self):
+    def __init__(self, cmd_repo=[]):
         self.commands: dict = {}
+        for cmd_cls in cmd_repo:
+            self.register_command(cmd_cls)
 
     # command attr is a subclass of Command (cant find a way to type hint this)
     def register_command(self, command):

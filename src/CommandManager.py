@@ -9,7 +9,7 @@ class CommandManager:
         self.commands[command.name] = command
 
     def execute_command(self, user_input: str):
-        parts:list = user_input.split()
+        parts: list = user_input.split()
         if not parts:
             return "No command provided."
 

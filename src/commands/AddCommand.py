@@ -5,8 +5,8 @@ class AddCommand(Command):
         if len(args) != 2:
             return "Invalid input. Usage: add <num1> <num2>"
         try:
-            a = int(args[0])
-            b = int(args[1])
+            a: int = int(args[0])
+            b: int = int(args[1])
             return a + b
         except ValueError:
             return "Invalid numbers provided. Usage: add <num1> <num2>"

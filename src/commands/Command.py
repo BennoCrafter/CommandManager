@@ -1,6 +1,6 @@
 class Command:
     def __init__(self, name):
-        self.name = name
+        self.name: str = name
 
     def execute(self, *args):
-        raise NotImplementedError("Implemnt execute method in subclass.")
+        raise NotImplementedError("Implement execute method in subclass.")

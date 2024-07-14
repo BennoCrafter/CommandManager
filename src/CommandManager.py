@@ -1,18 +1,21 @@
+from commands.Command import Command
+
 class CommandManager:
     def __init__(self):
-        self.commands = {}
+        self.commands: dict = {}
 
+    # command attr is a subclass of Command (cant find a way to type hint this)
     def register_command(self, command):
         self.commands[command.name] = command
 
-    def execute_command(self, user_input):
-        parts = user_input.split()
+    def execute_command(self, user_input: str):
+        parts:list = user_input.split()
         if not parts:
             return "No command provided."
 
-        command_name = parts[0]
+        command_name: str = parts[0]
         # args are the remaining parts of the input from index 1 to the end
-        args = parts[1:]
+        args: list = parts[1:]
         command = self.commands.get(command_name)
 
         if not command:

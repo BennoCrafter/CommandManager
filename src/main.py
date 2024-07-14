@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     while True:
         user_input: str = input("Enter command: ")
-        if user_input.lower() in ["exit", "quit"]:
+        if user_input.lower() in ["exit", "quit", "bye", "q", "x", "stop", "end"]:
             break
         result = manager.execute_command(user_input)
         print(result)
